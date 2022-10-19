@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=PT+Sans:wght@400;700&display=swap');
+
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E4E5DB;
+}
+
+button {
+    background-color: #DE4463;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 200px;
+  }
+
+  button:hover {
+    background-color: #B72A67;
+  }
+
+  h1 {
+    font-family: "Caveat", serif;
+    font-weight: bold;
+    font-size: 4rem;
+    color: #5E5E5E;
+  }
+
+  input[type="radio"] {
+    height: 40px;
+  }
+
+
+/******* CLASSES ****************/
+.flag {
+    height: 40px;
+}
+
+.lang-group {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.language {
+    display: flex;
+    align-items: flex-start;
+}
+
+/******* IDs ****************/
+
+  #random-number {
+    font-size: 10rem;
+    font-family: serif;
+    font-weight: bold;
+    height: 10rem;
+    margin-top: 30px;
+  }
+
+  #number-label {
+    margin-bottom: 2rem;
+    font-family: "PT Sans", sans-serif;
+    font-size: 48px;
+    height: 60px;
+    color: #336D88;
+  }
