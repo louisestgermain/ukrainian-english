@@ -1,4 +1,5 @@
-let x;
+let x = "";
+let text_x = "";
 let question_state = false;
 let language = "ukr";
 
@@ -210,27 +211,60 @@ const ENG_NUMS = [
     "one hundred"
 ]
 
+function changeLanguage() {
+    if (language == "ukr") {
+        document.getElementById("answer-sound").style.display = "none";
+    } else {
+        document.getElementById("answer-sound").style.display = "inline"; 
+    }
+
+    if (x != "") {
+        getTextNumber(x);
+    }
+}
+
+function getNewNumber() {
+    x = Math.floor(Math.random() * 101); // Numbers 0 to 100
+}
+
+function getTextNumber(x) {
+    if (language == "ukr") {
+        text_x = UKR_NUMS[x];
+    } else {
+        text_x = ENG_NUMS[x];
+        audio = new Audio("../audio/eng/" + x + ".wav");
+    }
+    document.getElementById("number-label").innerHTML = text_x;
+}
+
+changeLanguage(); // Setup
+document.getElementById("answer").style.visibility = "hidden";
+
 // Change the value of the language variable depending on what's selected.
 let radios = document.querySelectorAll('input[type=radio][name="language"]');
-radios.forEach(radio => radio.addEventListener('change', () => language=radio.value));
+radios.forEach(radio => radio.addEventListener('change', function(){
+    language=radio.value;
+    changeLanguage();
+}));
+
+let audio = new Audio("../audio/eng/1.wav");
+let answer_sound = document.getElementById("answer-sound");
+answer_sound.addEventListener("click", () => {
+    audio.play();
+  });
 
 
 document.getElementById("control-button").onclick = function(){
     if (question_state == false) {
-        document.getElementById("number-label").style.visibility = "hidden";
-        x = Math.floor(Math.random() * 101); // Numbers 0 to 100
+        document.getElementById("answer").style.visibility = "hidden";
+        getNewNumber();
+        getTextNumber(x);
         document.getElementById("random-number").innerHTML = x;
         document.getElementById("control-button").innerHTML = 'Show Answer';
         question_state = true;
-        if (language == "ukr") {
-            document.getElementById("number-label").innerHTML = UKR_NUMS[x];
-        } else {
-            document.getElementById("number-label").innerHTML = ENG_NUMS[x];
-        }
-        
     } else {
         // Show the answer
-        document.getElementById("number-label").style.visibility = "visible";
+        document.getElementById("answer").style.visibility = "visible";        
         document.getElementById("control-button").innerHTML = 'Get Next Number';
         question_state = false;
     }

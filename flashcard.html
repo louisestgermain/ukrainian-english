@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ukrainian Numbers Practice</title>
+    <title>Flashcard</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-    <h1>Numbers 0-100! Номери 0-100!</h1>
+    <h1>Flashcard Test</h1>
     <div class="lang-group">
         <div class="lang">
             <input type="radio" name="language" value="ukr" checked>
@@ -19,10 +19,10 @@
             <img class="flag" src="images/uk.png">
         </div>
     </div>
-    <label id="random-number"></label><br>
-    <div id="answer">
-        <label id="number-label"></label>
-        <img class="sound-btn" id="answer-sound" src="images/sound.png">
+
+    <div class="flashcard">
+        <div class="clue"></div>
+        <div class="answer"><p id="answer-text"></p></div>
     </div>
     <button type="button" id="control-button">Start Game</button>
     <script src="js/index.js"></script>

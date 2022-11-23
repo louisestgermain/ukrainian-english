@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #E4E5DB;
+    background-color: #ffffff;
 }
 
 button {
@@ -42,6 +42,21 @@ button {
     height: 40px;
 }
 
+div.flashcard {
+  width: 50%;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 30px;
+}
+
+div#answer {
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
 .lang-group {
     display: flex;
     width: 300px;
@@ -51,6 +66,11 @@ button {
 .language {
     display: flex;
     align-items: flex-start;
+}
+
+.sound-btn {
+  height: 2em;
+  padding-left: 10px;
 }
 
 /******* IDs ****************/
