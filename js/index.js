@@ -2,6 +2,7 @@ let x = "";
 let text_x = "";
 let question_state = false;
 let language = "ukr";
+let site_path = "https://louisestgermain.github.io/ukrainian-english/"
 
 const UKR_NUMS = [
     "нуль", 
@@ -232,7 +233,7 @@ function getTextNumber(x) {
         text_x = UKR_NUMS[x];
     } else {
         text_x = ENG_NUMS[x];
-        audio = new Audio("../audio/eng/" + x + ".wav");
+        audio = new Audio(site_path + "/audio/eng/" + x + ".wav");
     }
     document.getElementById("number-label").innerHTML = text_x;
 }
@@ -247,7 +248,7 @@ radios.forEach(radio => radio.addEventListener('change', function(){
     changeLanguage();
 }));
 
-let audio = new Audio("../audio/eng/1.wav");
+let audio = new Audio(site_path + "/audio/eng/1.wav");
 let answer_sound = document.getElementById("answer-sound");
 answer_sound.addEventListener("click", () => {
     audio.play();
